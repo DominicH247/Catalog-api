@@ -10,10 +10,11 @@ services:
       dockerfile: ./Dockerfile
     environment: 
       MongoDbSettings__Host: mongo
-      MongoDbSettings__User: mongoadmin
+      MongoDbSettings__User: mongoadmin 
+      # not ideal but okay for testing purposes
       MongoDbSettings__Password: password
     ports:
-      - 8080:80
+      - 8081:80
     depends_on:
       - db
 
@@ -23,6 +24,7 @@ services:
     restart: always
     environment:
       MONGO_INITDB_ROOT_USERNAME: mongoadmin
+      # not ideal but okay for testing purposes
       MONGO_INITDB_ROOT_PASSWORD: password
     ports:
       - 27017:27017
